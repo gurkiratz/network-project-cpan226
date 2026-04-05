@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}{{ email.subject }} – WebMail{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h2>{{ email.subject }}</h2>
+
+        <div class="detail-row">
+            <span class="label">From:</span> {{ email.sender.email|default:email.sender.username }}
+        </div>
+        <div class="detail-row">
+            <span class="label">To:</span> {{ email.to }}
+        </div>
+        {% if email.cc %}
+        <div class="detail-row">
+            <span class="label">CC:</span> {{ email.cc }}
+        </div>
+        {% endif %}
+        <div class="detail-row">
+            <span class="label">Sent:</span> {{ email.sent_at|date:"F d, Y H:i" }}
+        </div>
+
+        <div class="detail-row">
+            <span class="label">Message:</span>
+            <div class="body-content">{{ email.body }}</div>
+        </div>
+
+        {% if email.attachment %}
+        <div class="detail-row">
+            <span class="label">Attachment:</span><br>
+            <a class="attachment-link" href="{{ email.attachment.url }}" target="_blank">
+                &#128206; {{ email.attachment.name|slice:"12:" }}
+            </a>
+        </div>
+        {% endif %}
+
+        <div style="margin-top: 24px;">
+            <a href="{% url 'sent' %}" class="btn btn-secondary">&larr; Back to Sent</a>
+            <a href="{% url 'compose' %}" class="btn btn-primary" style="margin-left: 8px;">Compose New</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Sent – WebMail{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="card">
+        <h2>Sent Emails</h2>
+
+        {% if emails %}
+        <ul class="email-list">
+            {% for email in emails %}
+            <li class="email-item">
+                <div>
+                    <a href="{% url 'email_detail' email.pk %}">{{ email.subject }}</a>
+                </div>
+                <div class="email-meta">
+                    <span class="to-addr">To: {{ email.to }}</span>
+                    {{ email.sent_at|date:"M d, Y H:i" }}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="empty-state">
+            <p>No emails sent yet.</p>
+            <a href="{% url 'compose' %}" class="btn btn-primary">Compose your first email</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

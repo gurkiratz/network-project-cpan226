@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WebMail{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+{% if user.is_authenticated %}
+<nav>
+    <a class="brand" href="{% url 'compose' %}">&#9993; WebMail</a>
+    <ul>
+        <li><a href="{% url 'compose' %}" {% if request.resolver_match.url_name == 'compose' %}class="active"{% endif %}>Compose</a></li>
+        <li><a href="{% url 'sent' %}" {% if request.resolver_match.url_name == 'sent' %}class="active"{% endif %}>Sent</a></li>
+        <li><a href="{% url 'logout' %}">Logout ({{ user.username }})</a></li>
+    </ul>
+</nav>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Login – WebMail{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="card">
+        <h2>&#9993; WebMail Login</h2>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                <ul class="errorlist">
+                    {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary" style="width:100%">Sign In</button>
+        </form>
+    </div>
+    <p class="auth-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endblock %}

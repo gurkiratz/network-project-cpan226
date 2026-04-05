@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+    background: #1a73e8;
+    color: #fff;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+nav .brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+nav ul a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background .2s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+    background: rgba(255,255,255,.2);
+}
+
+/* Container */
+.container {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.12);
+    padding: 32px 36px;
+}
+
+.card h2 {
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+    color: #1a73e8;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color .2s;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1a73e8;
+    outline: none;
+    background: #fff;
+}
+
+.form-group .help-text {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+.form-group .errorlist {
+    color: #d32f2f;
+    font-size: 0.82rem;
+    list-style: none;
+    margin-top: 4px;
+}
+
+/* File input */
+.form-group input[type="file"] {
+    border: 1px dashed #ccc;
+    padding: 8px;
+    border-radius: 6px;
+    width: 100%;
+    background: #fafafa;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, box-shadow .2s;
+}
+
+.btn-primary {
+    background: #1a73e8;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1557b0;
+    box-shadow: 0 2px 6px rgba(26,115,232,.4);
+}
+
+.btn-secondary {
+    background: #e8eaed;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #d2d5db;
+}
+
+/* Messages */
+.messages {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.messages li {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.messages li.success {
+    background: #e6f4ea;
+    color: #1e7e34;
+    border-left: 4px solid #34a853;
+}
+
+.messages li.error {
+    background: #fce8e6;
+    color: #c62828;
+    border-left: 4px solid #ea4335;
+}
+
+/* Sent list */
+.email-list {
+    list-style: none;
+}
+
+.email-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background .15s;
+}
+
+.email-item:last-child {
+    border-bottom: none;
+}
+
+.email-item:hover {
+    background: #f8f9fa;
+}
+
+.email-item a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.email-item a:hover {
+    text-decoration: underline;
+}
+
+.email-meta {
+    font-size: 0.82rem;
+    color: #888;
+    text-align: right;
+}
+
+.email-meta .to-addr {
+    display: block;
+    color: #555;
+}
+
+/* Detail view */
+.detail-row {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+}
+
+.detail-row span.label {
+    font-weight: 700;
+    color: #555;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.body-content {
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 16px;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* Auth pages */
+.auth-container {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 0 16px;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: #555;
+}
+
+.auth-link a {
+    color: #1a73e8;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 48px 0;
+    color: #888;
+}
+
+.empty-state p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.attachment-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.attachment-link:hover {
+    text-decoration: underline;
+}
