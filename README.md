@@ -110,6 +110,24 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 
 ---
 
+## Team Contributions
+
+### Gurkirat Singh
+- Django project setup and configuration (`emailapp/settings.py`, virtual environment, `python-dotenv`)
+- SMTP integration — raw `smtplib` connection, `STARTTLS`, authentication, and message dispatch
+- MIME message construction — `MIMEMultipart`, `MIMEText`, `MIMEBase`, Base64 file encoding
+- Data model design — `SentEmail` model, migrations, SQLite persistence
+- URL routing and view structure
+
+### Ratika
+- User authentication — register, login, logout views using `django.contrib.auth`
+- Compose form — `ComposeForm`, multi-recipient handling, file upload logic
+- Sent folder and email detail views
+- Frontend — HTML templates (`base.html`, all page templates), CSS stylesheet (`style.css`)
+- Form validation and SMTP error handling in the UI
+
+---
+
 ## Pages
 
 | URL            | Page              | Auth required |
