@@ -4,3 +4,31 @@ __pycache__/
 db.sqlite3
 .env
 media/
+
+# Documents / slide decks / exports
+*.pdf
+*.ppt
+*.pptx
+*.key
+*.doc
+*.docx
+*.odt
+*.rtf
+make_pptx.py
+
+# Repo-specific generated artifacts
+/presentation.html
+/presentation.md
+/presentation.pdf
+/presentation.pptx
+/ppt/
+
+/PROJECT_REPORT.md
+/PROJECT_REPORT.pdf
+/project-proposal.md
+/speaking_guide.md
+/speaking_guide.pdf
+/converted-document.docx
+
+# Non-code assets (keep `static/` and `templates/` tracked)
+images/
